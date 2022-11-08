@@ -23,7 +23,7 @@ $(OUTDIR):
 
 $(OUTDIR)/$(TARGET): libkernrw.c kernrw_daemonUser.c $(LIBHOOKER) | $(OUTDIR)
 	$(CC) -dynamiclib -o $@ $^ $(CFLAGS)
-	install_name_tool -id /usr/lib/libkernrw.0.dylib $(OUTDIR)/$(TARGET)
+	install_name_tool -id /var/jb/usr/lib/libkernrw.0.dylib $(OUTDIR)/$(TARGET)
 	strip -x $@
 	$(CODESIGN) $@
 
